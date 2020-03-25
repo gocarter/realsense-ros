@@ -51,7 +51,7 @@ def ImuTest(data, gt_data):
         diff = v_data - v_gt_data
         max_diff = abs(diff).max()
         msg = 'original accel: Expect max diff of %.3f. Got %.3f.' % (gt_data['max_diff'].max(), max_diff)
-        print msg
+        print (msg)
         if max_diff > gt_data['max_diff'].max():
             return False, msg
 
@@ -60,7 +60,7 @@ def ImuTest(data, gt_data):
         diff = v_data - v_gt_data
         max_diff = abs(diff).max()
         msg = 'rotated to ROS: Expect max diff of %.3f. Got %.3f.' % (gt_data['ros_max_diff'].max(), max_diff)
-        print msg
+        print (msg)
         if max_diff > gt_data['ros_max_diff'].max():
             return False, msg
     except Exception as e:
